@@ -63,27 +63,27 @@ def start_server(server):
 
 def get_flash_size():
 	# make sure we don't have an A0 stepping
-	tn.write("cat /proc/cpuinfo\n")
-	buf = tn.read_until("Returned 0", 3)
+	tn.write(b"cat /proc/cpuinfo\n")
+	buf = tn.read_until(b"Returned 0", 3)
 	if not buf:
 		print("Unable to obtain CPU information; make sure to not use A0 stepping!")
-	elif buf.find('rev 0') > 0:
+	elif buf.find(b'rev 0') > 0:
 		print("Warning: IXP42x stepping A0 detected!")
 		if imagefile or url:
 			print("Error: No linux support for A0 stepping!")
 			sys.exit(2)
 
 	# now get flash size
-	tn.write("cat /proc/mtd\n")
-	buf = tn.read_until("Returned 0", 3)
+	tn.write(b"cat /proc/mtd\n")
+	buf = tn.read_until(b"Returned 0", 3)
 	if buf:
-		i = buf.find('mtd0:')
+		i = buf.find(b'mtd0:')
 		if i > 0:
 			return int(buf[i+6:].split()[0],16)
 		# use different command
-		tn.write("flash_layout\n")
-		buf = tn.read_until("Returned 0", 3)
-		i = buf.rfind('Range ')
+		tn.write(b"flash_layout\n")
+		buf = tn.read_until(b"Returned 0", 3)
+		i = buf.rfind(b'Range ')
 		if i > 0:
 			return int(buf[i+17:].split()[0],16)
 		print("Can't determine flash size!")
@@ -219,18 +219,18 @@ except socket.error as msg:
 
 tn.set_option_negotiation_callback(telnet_option)
 
-buf = tn.read_until("Username: ", 3)
+buf = tn.read_until(b"Username: ", 3)
 if not buf:
 	telnet_timeout()
-tn.write(user+"\n")
+tn.write(user.encode('ascii')+b"\n")
 if password:
-	buf = tn.read_until("Password: ", 3)
+	buf = tn.read_until(b"Password: ", 3)
 	if not buf:
 		telnet_timeout()
-	tn.write(password+"\n")
+	tn.write(password.encode('ascii')+b"\n")
 
 # wait for prompt
-buf = tn.read_until("> ", 3)
+buf = tn.read_until(b"> ", 3)
 if not buf:
 	telnet_timeout()
 
