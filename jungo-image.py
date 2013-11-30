@@ -97,7 +97,7 @@ def image_dump(tn, dumpfile):
 		buf = tn.read_until("Returned 0",2)
 		i = buf.find("Platform:")
 		if i < 0:
-                        platform="jungo"
+			platform="jungo"
 	else:
 		line=buf[i+9:]
 		i=line.find('\n')
