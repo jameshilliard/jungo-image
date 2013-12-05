@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<Object name="InternetGatewayDevice" profile="tr69_func_igd.c" framework_xml_version="2010.1.22.1">
+  <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="LANDeviceNumberOfEntries" />
+  <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="WANDeviceNumberOfEntries" />
+  <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_Physical_WAN" />
+  <Object name="DeviceInfo" profile="tr69_func_igd.c">
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="Manufacturer" />
+    <Parameter type="string(6)" writable="0" readable="1" default="(null)" notification="0" name="ManufactureOUI" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="ModelName" />
+    <Parameter type="string(256)" writable="0" readable="1" default="(null)" notification="0" name="Description" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="ProductClass" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="SerialNumber" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="HardwareVersion" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="SoftwareVersion" />
+    <Parameter type="string(16)" writable="0" readable="1" default="1.0" notification="0" name="SpecVersion" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="ProvisioningCode" />
+    <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="UpTime" />
+    <Parameter type="dateTime" writable="0" readable="1" default="(null)" notification="0" name="FirstUseTime" />
+    <Object name="VendorConfigFile" profile="tr69_func_vendor_cfg.c">
+      <Instance size="1" writable="1" readable="1">
+        <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="Name" />
+        <Parameter type="string(16)" writable="1" readable="1" default="(null)" notification="0" name="Version" />
+        <Parameter type="dateTime" writable="1" readable="1" default="(null)" notification="0" name="Date" />
+        <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="Description" />
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="DeviceConfig" profile="tr69_func_dev_cfg.c">
+    <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="EnableCWMP" />
+    <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="PeriodInformTime" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="ConnectionRequestURL" />
+
+    <Parameter type="boolean" writable="1" readable="1" default="1" notification="0" name="X_AEI_COM_IPv6Enable" />
+    <Parameter type="string" writable="1" readable="1" default="dualstack" notification="0" name="X_AEI_COM_TransType" />
+
+  </Object>
+  <Object name="ManagementServer" profile="tr69_func_mngr.c">
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="URL" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="Username" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="Password" />
+    <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="PeriodicInformEnable" />
+    <Parameter type="unsignedInt[1:]" writable="1" readable="1" default="(null)" notification="0" name="PeriodicInformInterval" />
+    <Parameter type="dateTime" writable="1" readable="1" default="(null)" notification="0" name="PeriodicInformTime" />
+    <Parameter type="string(32)" writable="0" readable="1" default="(null)" notification="0" name="ParameterKey" />
+    <Parameter type="string(256)" writable="0" readable="1" default="http://192.168.0.3:1234/acs" notification="0" name="ConnectionRequestURL" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="ConnectionRequestUsername" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="ConnectionRequestPassword" />
+    <Parameter type="boolean" writable="0" readable="1" default="(null)" notification="0" name="UpgradesManaged" />
+    <Parameter type="string(256)" writable="0" readable="1" default="(null)" notification="0" name="UDPConnectionRequestAddress" />
+    <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="STUNEnable" />
+    <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="STUNServerAddress" />
+    <Parameter type="unsignedInt[0:65535]" writable="1" readable="1" default="(null)" notification="0" name="STUNServerPort" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="STUNUsername" />
+    <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="STUNPassword" />
+    <Parameter type="boolean" writable="0" readable="1" default="(null)" notification="0" name="NATDetected" />
+  </Object>
+  <Object name="Time" profile="tr69_func_time.c">
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="NTPServer1" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="NTPServer2" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="NTPServer3" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="NTPServer4" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="NTPServer5" />
+    <Parameter type="dateTime" writable="0" readable="1" default="(null)" notification="0" name="CurrentLocalTime" />
+    <Parameter type="string(6)" writable="1" readable="1" default="(null)" notification="0" name="LocalTimeZone" />
+    <Parameter type="string(64)" writable="0" readable="1" default="(null)" notification="0" name="LocalTimeZoneName" />
+    <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="DaylightSavingsUsed" />
+    <Parameter type="dateTime" writable="1" readable="1" default="(null)" notification="0" name="DaylightSavingsStart" />
+    <Parameter type="dateTime" writable="1" readable="1" default="(null)" notification="0" name="DaylightSavingsEnd" />
+  </Object>
+  <Object name="IPPingDiagnostics" profile="tr69_func_ping.c">
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="DiagnosticsState" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="Interface" />
+    <Parameter type="string(64)" writable="1" readable="1" default="(null)" notification="0" name="Host" />
+    <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="SuccessCount" />
+    <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="FailureCount" />
+  </Object>
+  <Object name="LANDevice" profile="tr69_func_lan.c">
+    <Instance size="1" writable="1" readable="1">
+      <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="LANEthernetInterfaceNumberOfEntries" />      
+      <Object name="LANHostConfigManagement" profile="tr69_func_lan_host_cfg.c">
+        <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="IPInterfaceNumberOfEntries" />
+        <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="DHCPServerEnable" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="MinAddress" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="MaxAddress" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="(null)" notification="0" name="DHCPLeaseTime" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DNSServers" />
+        <Object name="IPInterface" profile="tr69_func_lan_host_iptf.c">
+          <Instance size="1" writable="1" readable="1">
+            <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+            <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="IPInterfaceIPAddress" />
+            <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="IPInterfaceSubnetMask" />
+            <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="IPInterfaceAddressingType" />
+            <Parameter type="string" writable="1" readable="1" default="br0" notification="0" name="X_ACTIONTEC_COM_IfName" />
+            <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="X_ACTIONTEC_COM_FirewallEnabled" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6InterfaceAddress" />
+            <Parameter type="string" writable="1" readable="1" default="Delegated" notification="0" name="X_ACTIONTEC_COM_IPv6InterfaceAddressingType" />
+            <Parameter type="string" writable="1" readable="1" default="FD00::1/64" notification="0" name="X_AEI_COM_IPv6ULAAddress" />
+            <Parameter type="string" writable="1" readable="1" default="Static" notification="0" name="X_AEI_COM_IPv6ULAAddressingType" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6LinkLocalAddress" />
+
+          </Instance>
+        </Object>
+      </Object>
+
+      <Object name="X_ACTIONTEC_COM_IPv6LANHostConfigManagement" profile="tr69_func_ipv6_lan_host_cfg.c">
+        <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+        <Parameter type="boolean" writable="1" readable="1" default="1" notification="0" name="IOTEnable" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6LinkLocalAddress" />
+        <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="DHCPv6ServerEnable"/>
+        <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="StatefulDHCPv6Server" />
+        <Parameter type="string" writable="1" readable="1" default="0002" notification="0" name="MinInterfaceID" />
+        <Parameter type="string" writable="1" readable="1" default="FFFF" notification="0" name="MaxInterfaceID" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="1800" notification="0" name="DHCPv6LeaseTime" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6DomainName" />
+        <Parameter type="string" writable="1" readable="1" default="DHCP" notification="0" name="IPv6DNSConfigType" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6DNSServers" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6DNSWANConnection" />
+        <Parameter type="boolean" writable="1" readable="1" default="1" notification="0" name="RADVDEnabled" />
+	<Parameter type="string" writable="1" readable="1" default="Renew" notification="0" name="X_AEI_COM_IPv6DHCPReqManner" />
+	<Parameter type="string" writable="1" readable="1" default="Dynamic" notification="0" name="X_AEI_COM_IPv6RAConfigType" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="180" notification="0" name="X_AEI_COM_IPv6RALifetime" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6PDWANConnection" />
+        <Parameter type="boolean" writable="1" readable="1" default="1" notification="0" name="IPv6ULAPrefixEnabled" />
+        <Parameter type="string" writable="1" readable="1" default="FD00::/48" notification="0" name="IPv6ULAPrefix" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6SubnetNum" />
+        <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6CurrPrefixID" />
+        <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6LastPrefixID" />
+        <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6CurrULAPrefixID" />
+        <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6LastULAPrefixID" />
+
+        <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="IPv6InterfaceNumberOfEntries" />
+
+
+        <Object name="X_ACTIONTEC_COM_MldSnoopingConfig" profile="tr69_func_ipv6_lan_host_mld.c">
+          <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+          <Parameter type="string" writable="1" readable="1" default="Standard" notification="0" name="Mode" />
+        </Object>
+      </Object>
+
+      <Object name="LANEthernetInterfaceConfig" profile="tr69_func_lan_eth_cfg.c">
+        <Instance size="1" writable="1" readable="1">
+          <Parameter type="boolean" writable="0" readable="1" default="(null)" notification="0" name="Enable" />
+          <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="Status" />
+          <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="MACAddress" />
+          <Object  name="Stats" profile="tr69_func_lan_eth_stat.c">
+            <Instance size="1" writable="1" readable="1">
+              <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="BytesSent" />
+              <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="BytesReceived" />
+              <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="PacketsSent" />
+              <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="PacketsReceived" />
+            </Instance>
+          </Object>
+        </Instance>
+      </Object>
+      <Object name="Hosts" profile="tr69_func_lan_hosts.c">
+        <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="2" name="HostNumberOfEntries" />
+        <Object name="Host" profile="tr69_func_lan_hosts.c">
+          <Instance size="1" writable="1" readable="1">
+            <Parameter type="string(32)" writable="1" readable="1" default="(null)" notification="0" name="MACAddress" />
+          </Instance>
+        </Object>
+      </Object>
+      <Object name="LANPDConfigManagement" profile="tr69_func_ipv6_lan_pd_cfg.c">
+        <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="Enable" />
+        <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="IPv6PDDelegateEnable" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="16" notification="0" name="IPv6MaxSubPDNumber" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="64" notification="0" name="IPv6SubPDlength" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="64" notification="0" name="IPv6SubPDlengthbackup" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6PDbackup" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="LanPDInstanceNumberOfEntries" />
+        <Object name="LanPDInstance" profile="tr69_func_ipv6_lan_pd_inst.c">
+          <Instance size="1" writable="1" readable="1">
+            <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="Enable" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6PD" />
+            <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="IPv6PDPltime" />
+            <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="IPv6PDVltime" />
+            <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="IPv6PDLeasetime" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6DUID" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6linkaddress" />
+            <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="IPv6HostName" />
+          </Instance>
+        </Object>
+      </Object>
+    </Instance>
+  </Object>
+  <Object name="WANDevice" profile="tr69_func_wan.c">
+    <Instance size="1" writable="1" readable="1">
+      <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="WANConnectionNumberOfEntries" />
+      <Object name="WANCommonInterfaceConfig" profile="tr69_func_wan_itf.c">
+        <Parameter type="boolean" writable="0" readable="1" default="TRUE" notification="0" name="EnabledForInternet" />
+        <Parameter type="string(16)" writable="0" readable="1" default="(null)" notification="0" name="WANAccessType" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="TotalBytesSent" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="TotalBytesReceived" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="TotalPacketsSent" />
+        <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="TotalPacketsReceived" />
+      </Object>
+      <Object name="WANConnectionDevice" profile="tr69_func_wan_conn_dev.c">
+        <Instance size="1" writable="1" readable="1">
+          <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="WANIPConnectionNumberOfEntries" />
+          <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="WANPPPConnectionNumberOfEntries" />
+          <Object name="WANIPConnection" profile="tr69_func_wan_conn_ip.c">
+            <Instance size="1" writable="1" readable="1">
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+              <Parameter type="string" writable="1" readable="1" default="Unconfigured" notification="0" name="ConnectionStatus" />
+              <Parameter type="string" writable="1" readable="1" default="IP_Routed" notification="0" name="connectionType" />
+              <Parameter type="boolean" writable="0" readable="1" default="TRUE" notification="0" name="NATEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="AddressingType" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="ExternalIPAddress" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SubnetMask" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DefaultGateway" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DNSServers" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="" notification="0" name="MaxMTUSize" />
+
+		 <Parameter type="unsignedInt" writable="0" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_REQ_IANA" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IfName" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6Enabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="X_ACTIONTEC_COM_FirewallEnabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv4Enabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_UnnumberedModel" />
+              <Parameter type="string" writable="0" readable="1" default="Unconfigured" notification="0" name="X_ACTIONTEC_COM_IPv6ConnStatus" />
+              <Parameter type="string" writable="1" readable="1" default="DHCP" notification="0" name="X_ACTIONTEC_COM_IPv6AddressingType" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_ExternalIPv6Address" />
+	      <Parameter type="string" writable="1" readable="1" default="DHCP" notification="0" name="X_ACTIONTEC_COM_DefaultIPv6RouteSource" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_DefaultIPv6Gateway" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6DNSServers" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6PrefixDelegationEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefix" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6SitePrefix_BackUp" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixPltime" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixVltime" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_Dhcp6cPid" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_MLDEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixT1" />
+              <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixT2" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6DNSSearchList" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="X_ACTIONTEC_COM_MBIT" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="X_ACTIONTEC_COM_OBIT" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_TMP_RALIFETIME" />
+
+
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6DataEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="DualStack" notification="0" name="X_AEI_COM_TransType" />
+              <Parameter type="string" writable="1" readable="1" default="Disable" notification="0" name="X_AEI_COM_IPv6rdStatus" />
+              <Parameter type="string" writable="1" readable="1" default="Delegated" notification="0" name="X_AEI_COM_IPv6rdPrefixType" />
+              <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6rdBRIPv4Addresses" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6rdPrefix" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6rdPrefixLength" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6rdIPv4MaskLength" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="1480" notification="0" name="X_AEI_COM_IPv6rdTunnelMTU" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6TunnelIfName" />
+
+              <Parameter type="string" writable="1" readable="1" default="Disable" notification="0" name="X_AEI_COM_IPv6in4Status" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6in4LocalIPv4Address" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6in4LocalIPv6Address" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6in4RemoteIPv4Address" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6in4RemoteIPv6Address" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6in4Prefix" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6in4PrefixLength" />
+              <Parameter type="string" writable="1" readable="1" default="Disable" notification="0" name="X_AEI_COM_IPv6to4Status" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6to4ServerIPv6Address" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6LinkLocalAddress" />
+              
+              <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="PortMappingNumberOfEntries" />
+              <Object name="PortMapping" profile="tr69_func_wan_conn_ip_pmap.c">
+                <Instance size="1" writable="1" readable="1">
+                  <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="PortMappingEnabled" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="PortMappingLeaseDuration" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="ExternalPort" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="InternalPort" />
+                  <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="PortMappingProtocol" />
+                </Instance>
+              </Object>
+            </Instance>
+          </Object>
+          <Object name="WANPPPConnection" profile="tr69_func_wan_conn_ppp.c">
+            <Instance size="1" writable="1" readable="1">
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+              <Parameter type="string" writable="1" readable="1" default="Unconfigured" notification="0" name="ConnectionStatus" />
+              <Parameter type="string" writable="1" readable="1" default="IP_Routed" notification="0" name="connectionType" />
+              <Parameter type="boolean" writable="0" readable="1" default="TRUE" notification="0" name="NATEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="AddressingType" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="ExternalIPAddress" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SubnetMask" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DefaultGateway" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DNSServers" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="" notification="0" name="MaxMTUSize" />
+
+		<Parameter type="unsignedInt" writable="0" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_REQ_IANA" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IfName" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6Enabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="X_ACTIONTEC_COM_FirewallEnabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv4Enabled" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_UnnumberedModel" />
+              <Parameter type="string" writable="0" readable="1" default="Unconfigured" notification="0" name="X_ACTIONTEC_COM_IPv6ConnStatus" />
+              <Parameter type="boolean" writable="0" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6PppUp" />
+              <Parameter type="string" writable="1" readable="1" default="DHCP" notification="0" name="X_ACTIONTEC_COM_IPv6AddressingType" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_ExternalIPv6Address" />
+	      <Parameter type="string" writable="1" readable="1" default="DHCP" notification="0" name="X_ACTIONTEC_COM_DefaultIPv6RouteSource" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_DefaultIPv6Gateway" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6DNSServers" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6PrefixDelegationEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefix" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6SitePrefix_BackUp" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixPltime" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixVltime" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_Dhcp6cPid" />
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_MLDEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixT1" />
+              <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_IPv6SitePrefixT2" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_ACTIONTEC_COM_IPv6DNSSearchList" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="X_ACTIONTEC_COM_MBIT" />
+              <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="X_ACTIONTEC_COM_OBIT" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_ACTIONTEC_COM_TMP_RALIFETIME" />
+               
+              <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6DataEnabled" />
+              <Parameter type="string" writable="1" readable="1" default="DualStack" notification="0" name="X_AEI_COM_TransType" />
+              <Parameter type="string" writable="1" readable="1" default="Disable" notification="0" name="X_AEI_COM_IPv6rdStatus" />
+              <Parameter type="string" writable="1" readable="1" default="Delegated" notification="0" name="X_AEI_COM_IPv6rdPrefixType" />
+              <Parameter type="string" writable="1" readable="1" default="" notification="0" name="X_AEI_COM_IPv6rdBRIPv4Addresses" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6rdPrefix" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6rdPrefixLength" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_IPv6rdIPv4MaskLength" />
+              <Parameter type="unsignedInt" writable="1" readable="1" default="1480" notification="0" name="X_AEI_COM_IPv6rdTunnelMTU" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6TunnelIfName" />
+              <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_IPv6LinkLocalAddress" />
+              
+              <Parameter type="unsignedInt" writable="0" readable="1" default="1" notification="1" name="PortMappingNumberOfEntries" />
+              <Object name="PortMapping" profile="tr69_func_wan_conn_ppp_pmap.c">
+                <Instance size="1" writable="1" readable="1">
+                  <Parameter type="boolean" writable="1" readable="1" default="(null)" notification="0" name="PortMappingEnabled" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="PortMappingLeaseDuration" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="ExternalPort" />
+                  <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="InternalPort" />
+                  <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="PortMappingProtocol" />
+                </Instance>
+              </Object>
+            </Instance>
+          </Object>
+        </Instance>
+      </Object>
+    </Instance>
+  </Object>
+  <Object name="X_ACTIONTEC_COM_IPv6Layer3Forwarding" profile="tr69_func_ipv6_lay3_fwd.c">
+    <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DefaultConnectionService" />
+    <Parameter type="unsignedInt" writable="0" readable="1" default="(null)" notification="0" name="ForwardNumberOfEntries" />
+    <Object name="IPv6Forwarding" profile="tr69_func_ipv6_lay3_fwd_fwd.c">
+      <Instance size="1" writable="1" readable="1">
+        <Parameter type="boolean" writable="1" readable="1" default="0" notification="0" name="Enable" />
+        <Parameter type="string" writable="0" readable="1" default="(null)" notification="0" name="Status" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="Type" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="PolicyRoutingName" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DestIPv6Address" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceIPv6Address" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceIfName" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="ForwardingPolicy" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="GatewayIPv6Address" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="Interface" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="ForwardingMetric" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="(null)" notification="0" name="MTU" />
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="X_AEI_COM_Firewall" profile="tr69_func_aei_firewall.c">
+    <Parameter type="boolean" writable="1" readable="1" default="TRUE" notification="0" name="Enable" />
+    <Parameter type="boolean" writable="1" readable="1" default="TRUE" notification="0" name="X_AEI_COM_FIREWALL_TR69Enabled" />
+    <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="X_AEI_COM_FIREWALL_STEALTHMODE" />
+    <Parameter type="boolean" writable="1" readable="1" default="TRUE" notification="0" name="X_AEI_COM_FIREWALL_STATEFULEnabled" />
+    <Parameter type="string" writable="1" readable="1" default="Medium" notification="0" name="X_AEI_COM_FIREWALL_LEVEL" />
+    <Parameter type="string" writable="1" readable="1" default="600" notification="0" name="X_AEI_COM_FIREWALL_INVALUE" />
+    <Parameter type="string" writable="1" readable="1" default="FFF" notification="0" name="X_AEI_COM_FIREWALL_OUTVALUE" />
+    <Parameter type="string" writable="1" readable="1" default="0.0.0.0" notification="0" name="X_AEI_COM_FIREWALL_IP" />
+    <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_FIREWALL_SET" />
+    <Parameter type="string" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_FIREWALL_UNNUMIP_STR" />
+    <Parameter type="unsignedInt" writable="1" readable="1" default="58" notification="1" name="X_AEI_COM_MaxFirewallEntries" />
+    <Parameter type="unsignedInt" writable="1" readable="1" default="1" notification="1" name="X_AEI_COM_Firewall_RulesNumberOfEntries" />
+    <Object name="X_AEI_COM_Firewall_Rules" profile="tr69_func_aei_firewall_rules.c">
+      <Instance size="1" writable="1" readable="1">
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="Enable" />
+        <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_FirewallServiceName" />
+        <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_FirewallServiceType" />
+        <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_FirewallServicePort" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="1" name="X_AEI_COM_Protocol" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_SourceIP" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_SourcePort" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_DestIP" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_DestPort" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="1" name="X_AEI_COM_TrafficType" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_TrafficInPolicy" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_TrafficOutPolicy" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="1" name="X_AEI_COM_RuleId" />
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="QueueManagement" profile="tr69_func_queuemanagement.c">
+      <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="Enable" />
+      <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_CURRENT_MAXClassKey" />
+      <Parameter type="unsignedInt" writable="1" readable="1" default="32" notification="0" name="MaxClassificationEntries" />
+      <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="ClassificationNumberOfEntries" />
+      <Object name="Classification" profile="tr69_func_queuemanagement_classification.c">
+        <Instance size="1" writable="1" readable="1">
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="Enable" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="X_AEI_COM_ClassName" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_ClassKey" />
+        <Parameter type="string(256)" writable="1" readable="1" default="(null)" notification="0" name="ClassInterface" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DestIP" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DestMask" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="DestIPExclude" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceIP" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceMask" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="SourceIPExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="Protocol" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="ProtocolExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="DestPort" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="DestPortRangeMax" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="DestPortExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="SourcePort" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="SourcePortRangeMax" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="SourcePortExclude" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceMACAddress" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="SourceMACMask" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="SourceMACExclude" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DestMACAddress" />
+        <Parameter type="string" writable="1" readable="1" default="(null)" notification="0" name="DestMACMask" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="DestMACExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="Ethertype" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="EthertypeExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="DSCPCheck" />
+        <Parameter type="boolean" writable="1" readable="1" default="FALSE" notification="0" name="DSCPExclude" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="DSCPMark" />
+        <Parameter type="int[-1:]" writable="1" readable="1" default="-1" notification="0" name="EthernetPriorityMark" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="0" notification="0" name="X_AEI_COM_Priority" />
+        </Instance>       
+      </Object>
+  </Object>
+      <Object name="LogLevel" profile="tr69_func_LogLevel.c">
+        <Instance size="1" writable="1" readable="1">
+        <Parameter type="string" writable="1" readable="1" default="data_center" notification="0" name="X_AEI_COM_ModuleName" />
+        <Parameter type="boolean" writable="1" readable="1" default="TRUE" notification="0" name="Enable" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="2" notification="0" name="X_AEI_COM_LogLevel" />
+        </Instance>
+        <Instance size="2" writable="1" readable="1">
+        <Parameter type="string" writable="1" readable="1" default="rtd" notification="0" name="X_AEI_COM_ModuleName" />
+        <Parameter type="boolean" writable="1" readable="1" default="TRUE" notification="0" name="Enable" />
+        <Parameter type="unsignedInt" writable="1" readable="1" default="2" notification="0" name="X_AEI_COM_LogLevel" />
+        </Instance>
+      </Object>
+</Object>

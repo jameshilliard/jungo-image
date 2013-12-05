@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<Object name="InternetGatewayDevice" data_size="12" framework_xml_version="2010.1.22.1">
+  <Parameter name="LANDeviceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+  <Parameter name="WANDeviceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+  <Parameter name="X_AEI_COM_Physical_WAN" acl="ReadWrite" type="string" notification="0"></Parameter>
+  <Object name="DeviceInfo" data_size="48">
+    <Parameter name="Manufacturer" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="ManufactureOUI" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="ModelName" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="Description" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="ProductClass" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="SerialNumber" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="HardwareVersion" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="SoftwareVersion" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="SpecVersion" acl="ReadOnly" type="string" notification="0">1.0</Parameter>
+    <Parameter name="ProvisioningCode" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="UpTime" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+    <Parameter name="FirstUseTime" acl="ReadOnly" type="dateTime" notification="0"/>
+    <Object name="VendorConfigFile" data_size="0">
+      <Instance size="1" acl="ReadWrite" data_size="16">
+        <Parameter name="Name" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="Version" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="Date" acl="ReadWrite" type="dateTime" notification="0"/>
+        <Parameter name="Description" acl="ReadWrite" type="string" notification="0"></Parameter>
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="DeviceConfig" data_size="20">
+    <Parameter name="EnableCWMP" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+    <Parameter name="PeriodInformTime" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+    <Parameter name="ConnectionRequestURL" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="X_AEI_COM_IPv6Enable" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+    <Parameter name="X_AEI_COM_TransType" acl="ReadWrite" type="string" notification="0">dualstack</Parameter>
+  </Object>
+  <Object name="ManagementServer" data_size="72">
+    <Parameter name="URL" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="Username" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="Password" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="PeriodicInformEnable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+    <Parameter name="PeriodicInformInterval" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+    <Parameter name="PeriodicInformTime" acl="ReadWrite" type="dateTime" notification="0"/>
+    <Parameter name="ParameterKey" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="ConnectionRequestURL" acl="ReadOnly" type="string" notification="0">http://192.168.0.3:1234/acs</Parameter>
+    <Parameter name="ConnectionRequestUsername" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="ConnectionRequestPassword" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="UpgradesManaged" acl="ReadOnly" type="boolean" notification="0"></Parameter>
+    <Parameter name="UDPConnectionRequestAddress" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="STUNEnable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+    <Parameter name="STUNServerAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="STUNServerPort" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+    <Parameter name="STUNUsername" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="STUNPassword" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="NATDetected" acl="ReadOnly" type="boolean" notification="0"></Parameter>
+  </Object>
+  <Object name="Time" data_size="44">
+    <Parameter name="NTPServer1" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="NTPServer2" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="NTPServer3" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="NTPServer4" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="NTPServer5" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="CurrentLocalTime" acl="ReadOnly" type="dateTime" notification="0"/>
+    <Parameter name="LocalTimeZone" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="LocalTimeZoneName" acl="ReadOnly" type="string" notification="0"></Parameter>
+    <Parameter name="DaylightSavingsUsed" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+    <Parameter name="DaylightSavingsStart" acl="ReadWrite" type="dateTime" notification="0"/>
+    <Parameter name="DaylightSavingsEnd" acl="ReadWrite" type="dateTime" notification="0"/>
+  </Object>
+  <Object name="IPPingDiagnostics" data_size="20">
+    <Parameter name="DiagnosticsState" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="Interface" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="Host" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="SuccessCount" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+    <Parameter name="FailureCount" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+  </Object>
+  <Object name="LANDevice" data_size="0">
+    <Instance size="1" acl="ReadWrite" data_size="4">
+      <Parameter name="LANEthernetInterfaceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+      <Object name="LANHostConfigManagement" data_size="24">
+        <Parameter name="IPInterfaceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+        <Parameter name="DHCPServerEnable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+        <Parameter name="MinAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="MaxAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DHCPLeaseTime" acl="ReadWrite" type="Int" notification="0"></Parameter>
+        <Parameter name="DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Object name="IPInterface" data_size="0">
+          <Instance size="1" acl="ReadWrite" data_size="44">
+            <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+            <Parameter name="IPInterfaceIPAddress" acl="ReadOnly" type="string" notification="0"></Parameter>
+            <Parameter name="IPInterfaceSubnetMask" acl="ReadOnly" type="string" notification="0"></Parameter>
+            <Parameter name="IPInterfaceAddressingType" acl="ReadOnly" type="string" notification="0"></Parameter>
+            <Parameter name="X_ACTIONTEC_COM_IfName" acl="ReadWrite" type="string" notification="0">br0</Parameter>
+            <Parameter name="X_ACTIONTEC_COM_FirewallEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+            <Parameter name="X_ACTIONTEC_COM_IPv6InterfaceAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+            <Parameter name="X_ACTIONTEC_COM_IPv6InterfaceAddressingType" acl="ReadWrite" type="string" notification="0">Delegated</Parameter>
+            <Parameter name="X_AEI_COM_IPv6ULAAddress" acl="ReadWrite" type="string" notification="0">FD00::1/64</Parameter>
+            <Parameter name="X_AEI_COM_IPv6ULAAddressingType" acl="ReadWrite" type="string" notification="0">Static</Parameter>
+            <Parameter name="X_AEI_COM_IPv6LinkLocalAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+          </Instance>
+        </Object>
+      </Object>
+      <Object name="X_ACTIONTEC_COM_IPv6LANHostConfigManagement" data_size="100">
+        <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="IOTEnable" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+        <Parameter name="X_AEI_COM_IPv6LinkLocalAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DHCPv6ServerEnable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="StatefulDHCPv6Server" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="MinInterfaceID" acl="ReadWrite" type="string" notification="0">0002</Parameter>
+        <Parameter name="MaxInterfaceID" acl="ReadWrite" type="string" notification="0">FFFF</Parameter>
+        <Parameter name="DHCPv6LeaseTime" acl="ReadWrite" type="Int" notification="0">1800</Parameter>
+        <Parameter name="IPv6DomainName" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="IPv6DNSConfigType" acl="ReadWrite" type="string" notification="0">DHCP</Parameter>
+        <Parameter name="IPv6DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="IPv6DNSWANConnection" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="RADVDEnabled" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+        <Parameter name="X_AEI_COM_IPv6DHCPReqManner" acl="ReadWrite" type="string" notification="0">Renew</Parameter>
+        <Parameter name="X_AEI_COM_IPv6RAConfigType" acl="ReadWrite" type="string" notification="0">Dynamic</Parameter>
+        <Parameter name="X_AEI_COM_IPv6RALifetime" acl="ReadWrite" type="unsignedInt" notification="0">180</Parameter>
+        <Parameter name="IPv6PDWANConnection" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="IPv6ULAPrefixEnabled" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+        <Parameter name="IPv6ULAPrefix" acl="ReadWrite" type="string" notification="0">FD00::/48</Parameter>
+        <Parameter name="X_AEI_COM_IPv6SubnetNum" acl="ReadOnly" type="unsignedInt" notification="0">0</Parameter>
+        <Parameter name="X_AEI_COM_IPv6CurrPrefixID" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_IPv6LastPrefixID" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_IPv6CurrULAPrefixID" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_IPv6LastULAPrefixID" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="IPv6InterfaceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+        <Object name="X_ACTIONTEC_COM_MldSnoopingConfig" data_size="8">
+          <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+          <Parameter name="Mode" acl="ReadWrite" type="string" notification="0">Standard</Parameter>
+        </Object>
+      </Object>
+      <Object name="LANEthernetInterfaceConfig" data_size="0">
+        <Instance size="1" acl="ReadWrite" data_size="12">
+          <Parameter name="Enable" acl="ReadOnly" type="boolean" notification="0"></Parameter>
+          <Parameter name="Status" acl="ReadOnly" type="string" notification="0"></Parameter>
+          <Parameter name="MACAddress" acl="ReadOnly" type="string" notification="0"></Parameter>
+          <Object name="Stats" data_size="0">
+            <Instance size="1" acl="ReadWrite" data_size="16">
+              <Parameter name="BytesSent" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+              <Parameter name="BytesReceived" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+              <Parameter name="PacketsSent" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+              <Parameter name="PacketsReceived" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+            </Instance>
+          </Object>
+        </Instance>
+      </Object>
+      <Object name="Hosts" data_size="4">
+        <Parameter name="HostNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="2">1</Parameter>
+        <Object name="Host" data_size="0">
+          <Instance size="1" acl="ReadWrite" data_size="4">
+            <Parameter name="MACAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+          </Instance>
+        </Object>
+      </Object>
+      <Object name="LANPDConfigManagement" data_size="28">
+        <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+        <Parameter name="IPv6PDDelegateEnable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+        <Parameter name="IPv6MaxSubPDNumber" acl="ReadWrite" type="unsignedInt" notification="0">16</Parameter>
+        <Parameter name="IPv6SubPDlength" acl="ReadWrite" type="unsignedInt" notification="0">64</Parameter>
+        <Parameter name="IPv6SubPDlengthbackup" acl="ReadWrite" type="unsignedInt" notification="0">64</Parameter>
+        <Parameter name="IPv6PDbackup" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="LanPDInstanceNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+        <Object name="LanPDInstance" data_size="0">
+          <Instance size="1" acl="ReadWrite" data_size="32">
+            <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+            <Parameter name="IPv6PD" acl="ReadWrite" type="string" notification="0"></Parameter>
+            <Parameter name="IPv6PDPltime" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+            <Parameter name="IPv6PDVltime" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+            <Parameter name="IPv6PDLeasetime" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+            <Parameter name="IPv6DUID" acl="ReadWrite" type="string" notification="0"></Parameter>
+            <Parameter name="IPv6linkaddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+            <Parameter name="IPv6HostName" acl="ReadWrite" type="string" notification="0"></Parameter>
+          </Instance>
+        </Object>
+      </Object>
+    </Instance>
+  </Object>
+  <Object name="WANDevice" data_size="0">
+    <Instance size="1" acl="ReadWrite" data_size="4">
+      <Parameter name="WANConnectionNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+      <Object name="WANCommonInterfaceConfig" data_size="24">
+        <Parameter name="EnabledForInternet" acl="ReadOnly" type="boolean" notification="0">1</Parameter>
+        <Parameter name="WANAccessType" acl="ReadOnly" type="string" notification="0"></Parameter>
+        <Parameter name="TotalBytesSent" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+        <Parameter name="TotalBytesReceived" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+        <Parameter name="TotalPacketsSent" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+        <Parameter name="TotalPacketsReceived" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+      </Object>
+      <Object name="WANConnectionDevice" data_size="0">
+        <Instance size="1" acl="ReadWrite" data_size="8">
+          <Parameter name="WANIPConnectionNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+          <Parameter name="WANPPPConnectionNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+          <Object name="WANIPConnection" data_size="0">
+            <Instance size="1" acl="ReadWrite" data_size="224">
+              <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="ConnectionStatus" acl="ReadWrite" type="string" notification="0">Unconfigured</Parameter>
+              <Parameter name="connectionType" acl="ReadWrite" type="string" notification="0">IP_Routed</Parameter>
+              <Parameter name="NATEnabled" acl="ReadOnly" type="boolean" notification="0">1</Parameter>
+              <Parameter name="AddressingType" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="ExternalIPAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="SubnetMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="DefaultGateway" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="MaxMTUSize" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_REQ_IANA" acl="ReadOnly" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IfName" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6Enabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_FirewallEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv4Enabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_UnnumberedModel" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6ConnStatus" acl="ReadOnly" type="string" notification="0">Unconfigured</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6AddressingType" acl="ReadWrite" type="string" notification="0">DHCP</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_ExternalIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_DefaultIPv6RouteSource" acl="ReadWrite" type="string" notification="0">DHCP</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_DefaultIPv6Gateway" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6PrefixDelegationEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefix" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6SitePrefix_BackUp" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixPltime" acl="ReadWrite" type="Int" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixVltime" acl="ReadWrite" type="Int" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_Dhcp6cPid" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_MLDEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixT1" acl="ReadWrite" type="string" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixT2" acl="ReadWrite" type="string" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6DNSSearchList" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_MBIT" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_OBIT" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_TMP_RALIFETIME" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6DataEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_TransType" acl="ReadWrite" type="string" notification="0">DualStack</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdStatus" acl="ReadWrite" type="string" notification="0">Disable</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefixType" acl="ReadWrite" type="string" notification="0">Delegated</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdBRIPv4Addresses" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefix" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefixLength" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdIPv4MaskLength" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdTunnelMTU" acl="ReadWrite" type="unsignedInt" notification="0">1480</Parameter>
+              <Parameter name="X_AEI_COM_IPv6TunnelIfName" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4Status" acl="ReadWrite" type="string" notification="0">Disable</Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4LocalIPv4Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4LocalIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4RemoteIPv4Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4RemoteIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4Prefix" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6in4PrefixLength" acl="ReadWrite" type="Int" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6to4Status" acl="ReadWrite" type="string" notification="0">Disable</Parameter>
+              <Parameter name="X_AEI_COM_IPv6to4ServerIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6LinkLocalAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="PortMappingNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+              <Object name="PortMapping" data_size="0">
+                <Instance size="1" acl="ReadWrite" data_size="20">
+                  <Parameter name="PortMappingEnabled" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+                  <Parameter name="PortMappingLeaseDuration" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="ExternalPort" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="InternalPort" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="PortMappingProtocol" acl="ReadWrite" type="string" notification="0"></Parameter>
+                </Instance>
+              </Object>
+            </Instance>
+          </Object>
+          <Object name="WANPPPConnection" data_size="0">
+            <Instance size="1" acl="ReadWrite" data_size="192">
+              <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="ConnectionStatus" acl="ReadWrite" type="string" notification="0">Unconfigured</Parameter>
+              <Parameter name="connectionType" acl="ReadWrite" type="string" notification="0">IP_Routed</Parameter>
+              <Parameter name="NATEnabled" acl="ReadOnly" type="boolean" notification="0">1</Parameter>
+              <Parameter name="AddressingType" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="ExternalIPAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="SubnetMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="DefaultGateway" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="MaxMTUSize" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_REQ_IANA" acl="ReadOnly" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IfName" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6Enabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_FirewallEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv4Enabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_UnnumberedModel" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6ConnStatus" acl="ReadOnly" type="string" notification="0">Unconfigured</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6PppUp" acl="ReadOnly" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6AddressingType" acl="ReadWrite" type="string" notification="0">DHCP</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_ExternalIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_DefaultIPv6RouteSource" acl="ReadWrite" type="string" notification="0">DHCP</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_DefaultIPv6Gateway" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6DNSServers" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6PrefixDelegationEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefix" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6SitePrefix_BackUp" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixPltime" acl="ReadWrite" type="Int" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixVltime" acl="ReadWrite" type="Int" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_Dhcp6cPid" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_MLDEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixT1" acl="ReadWrite" type="string" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6SitePrefixT2" acl="ReadWrite" type="string" notification="0">0</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_IPv6DNSSearchList" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_ACTIONTEC_COM_MBIT" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_OBIT" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+              <Parameter name="X_ACTIONTEC_COM_TMP_RALIFETIME" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6DataEnabled" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_TransType" acl="ReadWrite" type="string" notification="0">DualStack</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdStatus" acl="ReadWrite" type="string" notification="0">Disable</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefixType" acl="ReadWrite" type="string" notification="0">Delegated</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdBRIPv4Addresses" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefix" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdPrefixLength" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdIPv4MaskLength" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+              <Parameter name="X_AEI_COM_IPv6rdTunnelMTU" acl="ReadWrite" type="unsignedInt" notification="0">1480</Parameter>
+              <Parameter name="X_AEI_COM_IPv6TunnelIfName" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="X_AEI_COM_IPv6LinkLocalAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+              <Parameter name="PortMappingNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="1">1</Parameter>
+              <Object name="PortMapping" data_size="0">
+                <Instance size="1" acl="ReadWrite" data_size="20">
+                  <Parameter name="PortMappingEnabled" acl="ReadWrite" type="boolean" notification="0"></Parameter>
+                  <Parameter name="PortMappingLeaseDuration" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="ExternalPort" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="InternalPort" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+                  <Parameter name="PortMappingProtocol" acl="ReadWrite" type="string" notification="0"></Parameter>
+                </Instance>
+              </Object>
+            </Instance>
+          </Object>
+        </Instance>
+      </Object>
+    </Instance>
+  </Object>
+  <Object name="X_ACTIONTEC_COM_IPv6Layer3Forwarding" data_size="8">
+    <Parameter name="DefaultConnectionService" acl="ReadWrite" type="string" notification="0"></Parameter>
+    <Parameter name="ForwardNumberOfEntries" acl="ReadOnly" type="unsignedInt" notification="0"></Parameter>
+    <Object name="IPv6Forwarding" data_size="0">
+      <Instance size="1" acl="ReadWrite" data_size="48">
+        <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="Status" acl="ReadOnly" type="string" notification="0"></Parameter>
+        <Parameter name="Type" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="PolicyRoutingName" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceIfName" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="ForwardingPolicy" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="GatewayIPv6Address" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="Interface" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="ForwardingMetric" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="MTU" acl="ReadWrite" type="unsignedInt" notification="0"></Parameter>
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="X_AEI_COM_Firewall" data_size="48">
+    <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_TR69Enabled" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_STEALTHMODE" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_STATEFULEnabled" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_LEVEL" acl="ReadWrite" type="string" notification="0">Medium</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_INVALUE" acl="ReadWrite" type="string" notification="0">600</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_OUTVALUE" acl="ReadWrite" type="string" notification="0">FFF</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_IP" acl="ReadWrite" type="string" notification="0">0.0.0.0</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_SET" acl="ReadWrite" type="string" notification="0">0</Parameter>
+    <Parameter name="X_AEI_COM_FIREWALL_UNNUMIP_STR" acl="ReadWrite" type="string" notification="0">0</Parameter>
+    <Parameter name="X_AEI_COM_MaxFirewallEntries" acl="ReadWrite" type="unsignedInt" notification="1">58</Parameter>
+    <Parameter name="X_AEI_COM_Firewall_RulesNumberOfEntries" acl="ReadWrite" type="unsignedInt" notification="1">1</Parameter>
+    <Object name="X_AEI_COM_Firewall_Rules" data_size="0">
+      <Instance size="1" acl="ReadWrite" data_size="52">
+        <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="X_AEI_COM_FirewallServiceName" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_FirewallServiceType" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_FirewallServicePort" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_Protocol" acl="ReadWrite" type="unsignedInt" notification="1">0</Parameter>
+        <Parameter name="X_AEI_COM_SourceIP" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_SourcePort" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_DestIP" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_DestPort" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_TrafficType" acl="ReadWrite" type="unsignedInt" notification="1">0</Parameter>
+        <Parameter name="X_AEI_COM_TrafficInPolicy" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_TrafficOutPolicy" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_RuleId" acl="ReadWrite" type="unsignedInt" notification="1">0</Parameter>
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="QueueManagement" data_size="16">
+    <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+    <Parameter name="X_AEI_COM_CURRENT_MAXClassKey" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+    <Parameter name="MaxClassificationEntries" acl="ReadWrite" type="unsignedInt" notification="0">32</Parameter>
+    <Parameter name="ClassificationNumberOfEntries" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+    <Object name="Classification" data_size="0">
+      <Instance size="1" acl="ReadWrite" data_size="124">
+        <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="X_AEI_COM_ClassName" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="X_AEI_COM_ClassKey" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+        <Parameter name="ClassInterface" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestIP" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestIPExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="SourceIP" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceIPExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="Protocol" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="ProtocolExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="DestPort" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="DestPortRangeMax" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="DestPortExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="SourcePort" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="SourcePortRangeMax" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="SourcePortExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="SourceMACAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceMACMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="SourceMACExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="DestMACAddress" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestMACMask" acl="ReadWrite" type="string" notification="0"></Parameter>
+        <Parameter name="DestMACExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="Ethertype" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="EthertypeExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="DSCPCheck" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="DSCPExclude" acl="ReadWrite" type="boolean" notification="0">0</Parameter>
+        <Parameter name="DSCPMark" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="EthernetPriorityMark" acl="ReadWrite" type="Int" notification="0">-1</Parameter>
+        <Parameter name="X_AEI_COM_Priority" acl="ReadWrite" type="unsignedInt" notification="0">0</Parameter>
+      </Instance>
+    </Object>
+  </Object>
+  <Object name="LogLevel" data_size="0">
+    <Instance size="1" acl="ReadWrite" data_size="12">
+      <Parameter name="X_AEI_COM_ModuleName" acl="ReadWrite" type="string" notification="0">data_center</Parameter>
+      <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+      <Parameter name="X_AEI_COM_LogLevel" acl="ReadWrite" type="unsignedInt" notification="0">2</Parameter>
+    </Instance>
+    <Instance size="2" acl="ReadWrite" data_size="12">
+      <Parameter name="X_AEI_COM_ModuleName" acl="ReadWrite" type="string" notification="0">rtd</Parameter>
+      <Parameter name="Enable" acl="ReadWrite" type="boolean" notification="0">1</Parameter>
+      <Parameter name="X_AEI_COM_LogLevel" acl="ReadWrite" type="unsignedInt" notification="0">2</Parameter>
+    </Instance>
+  </Object>
+</Object>
