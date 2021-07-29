@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # Copyright 2008, 2009 (C) Jose Vasconcellos <jvasco@verizon.net>
 #
@@ -6,7 +6,7 @@
 # (such as MI424-WR, USR8200 and WRV54G) to backup the installed
 # firmware and replace the boot loader.
 #
-# Tested with Python 2.5 on Linux and Windows
+# Ported to python3
 #
 """Usage: %s [options] <IP_address> [image.bin | url]
 Valid options:
